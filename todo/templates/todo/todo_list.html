@@ -1,0 +1,7 @@
+{% include 'todo/header.html' %}
+
+{% for object in object_list %}
+    <a href="{% url 'todo:todo_detail' object.pk %}">{{object}}</a> <br>
+{% endfor %}
+
+<a href="{% url 'todo:todo_create' %}">Create New</a>

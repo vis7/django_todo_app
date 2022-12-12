@@ -1,0 +1,15 @@
+{% include 'todo/header.html' %}
+
+<h1>To Do Details</h1>
+ID: {{todo.pk}} <br>
+Title: {{todo.title}} <br>
+Description: {{todo.description}} <br>
+Category: {{todo.category}} <br>
+Due Date: {{todo.due_date}} <br>
+Status: {{todo.status}} <br>
+
+<br>
+
+<a href="{% url 'todo:todo_update' todo.pk %}">Update</a>
+<a href="{% url 'todo:todo_delete' todo.pk %}">Delete</a>
+<a href="{% url 'todo:share_todo' %}">Share</a>

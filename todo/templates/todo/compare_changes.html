@@ -1,0 +1,25 @@
+{% include 'todo/header.html' %}
+
+<form method=post> {% csrf_token %}
+<h1>Original</h1>
+{{todo.title}} <br>
+{{todo.description}} <br>
+{{todo.category}} <br>
+{{todo.status}} <br>
+{{todo.due_date}} <br>
+
+<h1>Changes</h1>
+{{change_obj.title}} <br>
+{{change_obj.description}} <br>
+{{change_obj.category}} <br>
+{{change_obj.status}} <br>
+{{change_obj.due_date}} <br>
+
+<select name='action'>
+        <option value='approved'>Approved</option>
+        <option value='rejected'>Rejected</option>
+</select>  <br>
+
+<input type='submit'>
+
+</form>

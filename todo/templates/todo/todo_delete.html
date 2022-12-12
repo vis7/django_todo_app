@@ -1,0 +1,9 @@
+{% include 'todo/header.html' %}
+
+<form method='post'> {% csrf_token %}
+
+do you want to delete todo {{todo.pk}} {{todo.title}} ?
+<input type='submit' value='delete'>
+
+</form>
+

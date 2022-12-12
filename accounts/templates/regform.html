@@ -1,0 +1,12 @@
+{% include 'todo/header.html' %}
+
+<form method='post'>
+
+{% csrf_token %}
+{% for field in form %}
+<label >{{ field.label_tag }}</label>: {{ field }} <br>
+{% endfor %}
+
+<input type='submit' value='signup'>
+
+</form>

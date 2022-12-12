@@ -1,0 +1,23 @@
+{% include 'todo/header.html' %}
+
+<form method='post'> {% csrf_token %}
+    todo: <select name='todo'>
+        {% for todo in user_todos %}
+            <option value={{todo.pk}}>{{todo}}</option>
+        {% endfor %}
+    </select>
+
+    user: <select name='user'>
+        {% for user in users_to_share %}
+            <option value={{user.pk}}>{{user}}</option>
+        {% endfor %}
+    </select>
+    
+    permission: <select name='permission'>
+        {% for p in permission %}
+            <option value='{{p.1}}'>{{p.0}}<option>
+        {% endfor %}
+    </select>
+
+    <input type='submit' value='share'>
+</form>

@@ -1,0 +1,8 @@
+{% include 'todo/header.html' %}
+
+{% if user.is_authenticated %}
+<a href="{% url 'todo:todo_list' %}">Todo List</a> <br>
+<a href="{% url 'todo:shared_todo_list' %}">Shared Todo with Me</a> <br>
+<a href="{% url 'todo:change_list' %}">Review Changes by Others </a> <br>
+<a href="{% url 'todo:log_list' %}">Log List</a> <br>
+{% endif %}

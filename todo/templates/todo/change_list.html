@@ -1,0 +1,6 @@
+{% include 'todo/header.html' %}
+
+{% for object in object_list %}
+    <a href="{% url 'todo:compare_changes' object.pk %}">{{object}}</a> <br>
+{% endfor %}
+

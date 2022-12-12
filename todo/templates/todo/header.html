@@ -1,0 +1,8 @@
+<a href="{% url 'index' %}">home</a> <br>
+
+{% if user.is_authenticated %}
+    {{user}}  is logged in. <a href="{% url 'logout' %}"><h5 align='right'>logout</h5></a> <br>
+{% else %}
+    <a href="{% url 'login' %}">login</a> <br>
+    <a href="{% url 'accounts:signup' %}">signup</a>
+{% endif %}

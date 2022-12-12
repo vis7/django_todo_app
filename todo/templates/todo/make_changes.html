@@ -1,0 +1,7 @@
+{% include 'todo/header.html' %}
+
+<form method='post'> {% csrf_token %}
+    {{change_form.as_p}}
+
+    <input type='submit' value='create/update change'>
+</form>
