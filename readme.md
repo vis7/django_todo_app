@@ -38,3 +38,19 @@ isort .
 
 # Upgrades
 - add linter
+
+
+# Tests
+- signup, verify email, login
+- create todo
+- above scenario1 and scenario2
+
+
+# todo
+- add navbar in after sending mail to activate account after registration and in after clicking on registration link
+
+
+
+
+
+
