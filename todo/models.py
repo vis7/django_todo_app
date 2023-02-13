@@ -2,6 +2,7 @@ import datetime
 
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 
 from accounts.models import User
 
@@ -46,7 +47,7 @@ class SharePermission(models.Model):
 class Log(models.Model):
     todo_id = models.IntegerField()
     updated_by = models.CharField(max_length=255) # username
-    update_time = models.DateTimeField(default=datetime.datetime.now)
+    update_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return str(self.id) + ' - ' + self.updated_by + ' - ' + str(self.update_time)

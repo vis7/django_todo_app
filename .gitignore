@@ -132,3 +132,4 @@ dmypy.json
 # application specific
 sent_mails/
 db.sqlite3
+.vscode/

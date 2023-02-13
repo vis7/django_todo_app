@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
+from django.http import HttpResponse
 
 from .constants import USER_PERMISSION
 from .forms import ChangeForm, ToDoForm
@@ -55,13 +56,13 @@ class ToDoDetailReadOnly(DetailView):
 
 # Sharing
 def share_todo(request):
-    print(f'request_method: {request.method}')
+    # print(f'request_method: {request.method}')
     if request.method == 'POST':
         todo = request.POST.get('todo', None)
         user = request.POST.get('user', None)
         permission = request.POST.get('permission', 'read_only')
 
-        print(f'type: type(todo)')
+        # print(f'type: type(todo)')
         # getting objects from ids
         todo = get_object_or_404(ToDo, pk=todo)
         user = get_object_or_404(User, pk=user)
